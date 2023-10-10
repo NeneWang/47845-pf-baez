@@ -41,4 +41,16 @@ export class UsersComponent {
         },
       });
   }
+
+
+  onDeleteUser(id: number): void {
+    const index = this.users.findIndex((user) => user.id === id);
+    this.users.splice(index, 1);
+  }
+
+  onEditUser(user: User): void {
+    const index = this.users.findIndex((u) => u.id === user.id);
+    this.users[index] = user;
+  }
+
 }
