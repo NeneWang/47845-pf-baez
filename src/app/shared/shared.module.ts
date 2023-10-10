@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { FullnamePipe } from './pipes/fullname.pipe';
 
+
 @NgModule({
   declarations: [FullnamePipe],
   imports: [CommonModule],
@@ -23,6 +24,7 @@ import { FullnamePipe } from './pipes/fullname.pipe';
     MatDialogModule,
     FullnamePipe,
     MatTableModule,
+    
   ],
 })
 export class SharedModule {}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UsersDialogComponent } from './components/users-dialog/users-dialog.component';
+import { MatLabel } from '@angular/material/form-field';
 import { User } from './models';
 
 @Component({
