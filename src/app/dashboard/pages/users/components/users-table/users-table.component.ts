@@ -10,5 +10,7 @@ export class UsersTableComponent {
   @Input()
   dataSource: User[] = [];
 
+  
+
   displayedColumns = ['id', 'fullname', 'email', 'actions'];
 }
