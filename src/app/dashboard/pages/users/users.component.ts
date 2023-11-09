@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UsersDialogComponent } from './components/users-dialog/users-dialog.component';
+import { MatLabel } from '@angular/material/form-field';
 import { User } from './models';
-import { UsersService } from './users.service';
-import { UsersBetterService } from './users-better.service';
 
 @Component({
   selector: 'app-users',
@@ -13,15 +12,22 @@ import { UsersBetterService } from './users-better.service';
 export class UsersComponent {
   userName = '';
 
-  users: User[] = [];
+  users: User[] = [
+    {
+      id: 1,
+      name: 'Naruto',
+      lastName: 'Uzumaki',
+      email: 'naruto@mail.com',
+    },
+    {
+      id: 2,
+      name: 'Sasuke',
+      lastName: 'Uchiha',
+      email: 'sasuke@mail.com',
+    },
+  ];
 
-  constructor(
-    private matDialog: MatDialog,
-    private usersService: UsersService // MockUsersService // private usersBetterService: UsersBetterService
-  ) {
-    this.users = this.usersService.getUsers();
-    // console.log(this.usersBetterService.getUsersWithProduct());
-  }
+  constructor(private matDialog: MatDialog) {}
 
   openUsersDialog(): void {
     this.matDialog
@@ -29,48 +35,23 @@ export class UsersComponent {
       .afterClosed()
       .subscribe({
         next: (v) => {
+          console.log('VALOR: ', v);
           if (!!v) {
-            this.users = [
-              ...this.users,
-              {
-                ...v,
-                id: new Date().getTime(),
-              },
-            ];
+            this.userName = v;
           }
         },
       });
+  }
+
+
+  onDeleteUser(id: number): void {
+    const index = this.users.findIndex((user) => user.id === id);
+    this.users.splice(index, 1);
   }
 
   onEditUser(user: User): void {
-    this.matDialog
-      .open(UsersDialogComponent, {
-        data: user,
-      })
-      .afterClosed()
-      .subscribe({
-        next: (v) => {
-          if (!!v) {
-            // CREANDO UNA COPIA DEL ARRAY ACTUAL
-            // const arrayNuevo = [...this.users];
-
-            // const indiceToEdit = arrayNuevo.findIndex((u) => u.id === user.id);
-
-            // arrayNuevo[indiceToEdit] = { ...arrayNuevo[indiceToEdit], ...v };
-
-            // this.users = [...arrayNuevo];
-
-            this.users = this.users.map((u) =>
-              u.id === user.id ? { ...u, ...v } : u
-            );
-          }
-        },
-      });
+    const index = this.users.findIndex((u) => u.id === user.id);
+    this.users[index] = user;
   }
 
-  onDeleteUser(userId: number): void {
-    if (confirm('Esta seguro?')) {
-      this.users = this.users.filter((u) => u.id !== userId);
-    }
-  }
 }
