@@ -1,3 +1,4 @@
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
@@ -16,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { CoursesModule } from './pages/courses/courses.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [DashboardComponent, ToolbarComponent, SidebarComponent],
   imports: [
@@ -28,6 +30,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     TranslateModule,
     SharedModule,
     MatListModule,
+    MatSelectModule,
+    MatDatepickerModule,
 
     HomeModule,
     DashboardRoutingModule,

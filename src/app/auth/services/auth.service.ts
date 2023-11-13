@@ -17,7 +17,7 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
-  login(payload: LoginPayload): void {
+    login(payload: LoginPayload): void {
     // const headers = new HttpHeaders({
     //   token: localStorage.getItem('token') || 'NO HAY TOKEN',
     // });

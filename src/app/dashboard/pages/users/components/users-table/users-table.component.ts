@@ -7,10 +7,20 @@ import { User } from '../../models';
   styles: [],
 })
 export class UsersTableComponent {
-  @Input()
+  
+  // editUser Emit
+  // @Input() editUser: (user: User) => void = () => {};
+
+  @Input() users: User[] = [];
   dataSource: User[] = [];
 
   
 
   displayedColumns = ['id', 'fullname', 'email', 'actions'];
+
+  // goToDetail
+  goToDetail(id: number): void {
+    console.log('ID: ', id);
+  }
+
 }

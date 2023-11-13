@@ -18,12 +18,16 @@ export class UsersComponent {
       name: 'Naruto',
       lastName: 'Uzumaki',
       email: 'naruto@mail.com',
+      role: 'user',
+      token: '123456',
     },
     {
       id: 2,
       name: 'Sasuke',
       lastName: 'Uchiha',
       email: 'sasuke@mail.com',
+      role: 'admin',
+      token: '123456',
     },
   ];
 

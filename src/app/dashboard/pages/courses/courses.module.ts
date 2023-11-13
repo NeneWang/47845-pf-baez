@@ -8,6 +8,7 @@ import { CoursesDialogComponent } from './components/courses-dialog/courses-dial
 import { CourseDetailComponent } from './components/course-detail/course-detail.component';
 import { RouterModule } from '@angular/router';
 import { CourseRoutingModule } from './courses-routing.module';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { CourseRoutingModule } from './courses-routing.module';
     CoursesDialogComponent,
     CourseDetailComponent,
   ],
-  imports: [CommonModule, SharedModule, CourseRoutingModule],
+  imports: [CommonModule, SharedModule, CourseRoutingModule,
+
+    MatDatepickerModule,],
   providers: [
     {
       provide: ApiUrl,
@@ -24,4 +27,4 @@ import { CourseRoutingModule } from './courses-routing.module';
     },
   ],
 })
-export class CoursesModule {}
+export class CoursesModule { }
