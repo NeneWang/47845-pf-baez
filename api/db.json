@@ -88,7 +88,12 @@
     {
       "id": 1,
       "courseId": 1,
-      "studentId": 3 
+      "userId": 2
+    },
+    {
+      "courseId": 2,
+      "userId": 2,
+      "id": 2
     }
   ]
 }

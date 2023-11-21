@@ -1,8 +1,9 @@
+
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UsersDialogComponent } from './components/users-dialog/users-dialog.component';
 import { MatLabel } from '@angular/material/form-field';
-import { User } from './models';
+import { User, UserRole } from './models';
 
 @Component({
   selector: 'app-users',
@@ -18,16 +19,18 @@ export class UsersComponent {
       name: 'Naruto',
       lastName: 'Uzumaki',
       email: 'naruto@mail.com',
-      role: 'user',
+      role: 'STUDENT',
       token: '123456',
+      password: '123456',
     },
     {
       id: 2,
       name: 'Sasuke',
       lastName: 'Uchiha',
       email: 'sasuke@mail.com',
-      role: 'admin',
+      role: 'ADMIN',
       token: '123456',
+      password: '123456',
     },
   ];
 

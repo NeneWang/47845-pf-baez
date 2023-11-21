@@ -30,4 +30,9 @@ export class UsersTableComponent {
       .pipe(map((u) => u?.role));
   }
 
+  goToDetail(id: number): void {
+    this.router.navigate(['/dashboard/users', id]);
+    
+  }
+
 }

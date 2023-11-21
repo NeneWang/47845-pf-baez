@@ -9,11 +9,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { FullnamePipe } from './pipes/fullname.pipe';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
+
+
 
 
 @NgModule({
   declarations: [FullnamePipe],
-  imports: [CommonModule],
+  imports: [CommonModule, MatProgressSpinnerModule],
   exports: [
     MatButtonModule,
     MatIconModule,
@@ -24,7 +28,9 @@ import { FullnamePipe } from './pipes/fullname.pipe';
     MatDialogModule,
     FullnamePipe,
     MatTableModule,
-    
+    MatProgressSpinnerModule,
+    MatSelectModule,
+
   ],
 })
-export class SharedModule {}
+export class SharedModule { }
