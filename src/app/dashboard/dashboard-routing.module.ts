@@ -42,24 +42,6 @@ import { adminGuard } from '../core/guards/admin.guard';
                 (m) => m.EnrollmentsModule
               ),
           },
-
-          // {
-          //   path: 'courses',
-          //   component: CoursesComponent,
-          // },
-          // {
-          //   path: 'courses/:id',
-          //   component: CourseDetailComponent,
-          // },
-
-          // {
-          //   path: 'users',
-          //   component: UsersComponent,
-          // },
-          // {
-          //   path: 'users/detail/:id',
-          //   component: UserDetailComponent,
-          // },
           {
             path: '**',
             redirectTo: 'home',

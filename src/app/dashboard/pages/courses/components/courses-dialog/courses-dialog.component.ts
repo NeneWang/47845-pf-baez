@@ -22,7 +22,8 @@ export class CoursesDialogComponent {
   constructor(
     private matDialogRef: MatDialogRef<CoursesDialogComponent>,
     private coursesService: CoursesService,
-    @Inject(MAT_DIALOG_DATA) private courseId?: number
+    @Inject(MAT_DIALOG_DATA) 
+    private courseId?: number
   ) {
     if (courseId) {
       this.coursesService.getCourseById$(courseId).subscribe({
